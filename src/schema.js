@@ -45,7 +45,6 @@ const typeDefs = gql`
     authorId: String
     content: String
     videoUrl: String
-    modulesFromId(id: ID!): Module!
   }
 
   "Author of a complete Track"

@@ -1,7 +1,7 @@
 const resolvers = {
   Query: {
     tracksForHome: (_, __, { dataSources }) => {
-      console.log(_);
+      // console.log(_);
       return dataSources.trackAPI.getTracksForHome();
     },
     track: (_, { id }, { dataSources }) => {
@@ -33,16 +33,11 @@ const resolvers = {
   },
   Track: {
     author: ({ authorId }, _, { dataSources }) => {
-      console.log(authorId);
+      //console.log(authorId);
       return dataSources.trackAPI.getAuthor(authorId);
     },
     modules: (parent, _, { dataSources }) => {
       return dataSources.trackAPI.getTrackModules(parent.id);
-    },
-  },
-  Module: {
-    modulesFromId: (parent, _, { dataSources }) => {
-      return dataSources.trackAPI.getModuleFromId(parent.trackId, parent.id);
     },
   },
 };
